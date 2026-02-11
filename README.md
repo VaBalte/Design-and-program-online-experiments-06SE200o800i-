@@ -42,7 +42,7 @@ Push/Sync Changes to GitHub
 
 
 ####  Folder Structure Example
-session1/
+session1/ <br>
 ├── starter/          ← DO NOT TOUCH! Original materials. Please copy one to your personal workspace!
 ├── marry_jen/        ← Another student's workspace
 ├── john_doe/         ← Another student's workspace
