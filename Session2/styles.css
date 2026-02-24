@@ -3,6 +3,14 @@ h1{
     color: blue;
 }
 
+h2{
+    color:rgb(49, 62, 145)
+}
+
 p{
-    color:red;
+    color:rgb(3, 3, 3);
+}
+span {
+    color: rgb(249, 65, 9);
+    font-weight: bold;
 }
