@@ -1,2 +1,5 @@
-.final {background-color: beige}
-#myID {color: blue}
+.myClass {font-size: 50px;
+background-color: aquamarine}
+#myID {
+    background-color:antiquewhite;
+}

@@ -16,22 +16,24 @@
   
 
       <!--3.2.1 Create inputs to ask participants for some personal information, like ID (as text input; placehoder text as ABC123), age (as number input, add min = 18 and max = 35 input)-->
-      <label>1. ID: *</label>
-      <input type="text" placeholder="ABC123" required>
+      
+      <label>1. ID: <span style="color:red">*</span></label>
+      <input type="text" placeholder="ABC123" required;>
       <br>
-      <label>2. Age: </label>
-        <input type="number" min="18" max="35">
+      <label>2. Age: <span style="color:red">*</span></label>
+        <input type="number" min="18" max="35" required>
+        
 
       <!--3.2.2 Add drop-down more options (Non-Binary) for gender information-->
-      <p>3. Gender:</p>
-      <select name="gender" >
+      <p>3. Gender: <span style="color:red">*</span></p>
+      <select name="gender" required>
         <option value="" disabled selected>Please select your gender</option>
         <option>Woman</option>
         <option>Man</option>
         <option>Non-Binary</option>
       </select>
       <br><br> 
-
+    
       <!--3.2.3 Add an input as a type of input to "range" for this alertness question, don't forget about the min and max values for the range-->
        <h3>Tiredness Rating</h3>
        <p>How tired are you right now? </p>
@@ -65,7 +67,7 @@
           </label>
 
           <label class="likert-option">
-              <input type="radio" name="happiness" id="h-5" value="5">
+              <input type="radio" id="h-5" value="5">
               <span class="num">5</span>
               <span class="desc">Very happy</span>
           </label>
