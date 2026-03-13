@@ -17,8 +17,8 @@ console.log(`Expected output: ${isFasterThanThreshold(400)}`)
   
 /* exercise 5.2.4 */
 
-// Write a function that calculates the average reaction time from an array of four response times. 
-// called the function e.g., calculateAverageRT(responseTimes); .
+// Write a function that calculates the average reaction time from an array of six response times. 
+// call the function e.g., calculateAverageRT(responseTimes); .
 
 // Write your function here
 
