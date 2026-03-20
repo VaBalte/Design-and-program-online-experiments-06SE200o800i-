@@ -11,8 +11,10 @@
  let reactionTimes = [] 
     for(let i = 0; i < 10; i++){
         reactionTimes[i]=recordedTimes[i]-200;
- console.log("reactionTimes: i ",reactionTimes);
+        console.log("iterate:", i);
+        console.log("reactionTime:", reactionTimes[i]);
     }
+    console.log("reactionTimes: ", reactionTimes);
 
  /* # Plus 1: can you think of more than one way of doing it? */
  
@@ -26,12 +28,9 @@ let totalTime = 0;
 let thisTrial;
 let j = 0
 
-while (totalTime <= 2000) {
-    console.log("reactionTimes: j", reactionTimes);
+while (totalTime < 2000) {
+    totalTime = totalTime + reactionTimes[j];
+    thisTrial = j + 1;
+    j++;
 }
-
-
-
-
-
  console.log(`Cumulative reaction time exceeded 2000 ms at trial ${thisTrial}.`);
