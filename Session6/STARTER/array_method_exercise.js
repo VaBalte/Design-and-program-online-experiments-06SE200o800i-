@@ -12,7 +12,7 @@ const trials = [
         
  /* exercise 6.2.1 */
  
-// You goal is to calculate the overal accucary (0-1).
+// You goal is to calculate the overall accuracy (0-1).
 
 // An example of using filter()
 
@@ -22,7 +22,7 @@ const trials = [
 //console.log("Accuracy :", acc); // 0.6
 
 
-// Given the example of using filter(), can you use forEach() instead to achive the same goal?
+// Given the example of using filter(), can you use forEach() instead to achieve the same goal?
 
 /* Hit:
  1.use forEach to get correct count, divided by total length to get accuracy
