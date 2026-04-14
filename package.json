@@ -1,0 +1,15 @@
+{
+  "name": "design-and-program-online-experiments-06se200o800i-",
+  "version": "1.0.0",
+  "description": "For exercise &amp; assignment submission.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jspsych": "^8.2.3"
+  }
+}
