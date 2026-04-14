@@ -25,7 +25,20 @@
   <script>
 
     /* initialize jsPsych */
-    const jsPsych = initJsPsych();
+    const jsPsych = initJsPsych(
+    /*8.1.6*/
+    {
+    on_finish: () => {
+      jsPsych.data.get().localSave("csv", "verbal_fluency_data.csv");}
+    }
+    );
+
+    /* 8.1.2 global-level*/
+    jsPsych.data.addProperties({
+      participant_id: 'P001',
+      session: 1
+    });
+
 
     /* create timeline */
     const timeline = [];
@@ -52,16 +65,46 @@
         can say any kind of word you want, except for proper nouns (like Bob or Boston), numbers <br><br>
         The recording will stop after one minute.  <br><br> Are you ready?.</p>
       `,
-      choices: ['Yes,I am ready!']
-    }
+      
+      /*8.1.3 trial-level*/
+      data: {
+        phase: "instruction",
+      },
+      /*8.1.4 trial-level */
+    on_finish: (data) => {
+      data.speed_label = data.rt < 300? "fast" : "slow";
+      data.reactionTime = data.rt
+    },
+    choices: ['Yes,I am ready!']
+  }
     timeline.push(instruction);
 
-    /* exercise 8.1:  add recording for 1 min the timeline *
-
-
-
-    
+    /* exercise 8.1.1:  add recording for 1 min the timeline */
+    const record = {
+    type: jsPsychHtmlAudioResponse,
+    stimulus: '<p> Say as many words as you can think of that begin with the letter "F".</p>',
+    recording_duration: 6000,
+   
+     /*8.1.3 trial-level */
+    data: {
+      phase: "fluency",
+      condition: "letter_F"
+    }
+    };
     timeline.push(record);
+
+    /*8.1.5 trial-level */
+    const endMessage = {
+      type: jsPsychHtmlButtonResponse,
+      stimulus: () => {
+        const allData = jsPsych.data.get();
+        const nSlow = allData.filter({speed_label: "slow"}).count();
+        return nSlow > 0 ? "too slow!" : "Thank you";
+      },
+      choices: ["Finish"],
+      data: {phase: "end"}
+    };
+    timeline.push(endMessage)
 
     /* start the experiment */
     jsPsych.run(timeline);
