@@ -4,59 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        h3{
-            color: yellowgreen;
-        }
-    </style>
-    <link rel="stylesheet" href="myFirstCSS.css">
+  
     <title>My page</title>
 </head>
 <body>
-    <h1>My main heading</h1>
-    <p>line one.<br>line two.</p>
-    <p>A paragraph with <strong>bold</strong> text.</p>
-    <p>A paragraph with <em>italic</em> text.</p>
-
-    <div style="color:blue; text-align: center;">
-    
-        <h2>Generic grouped content</h2>
-        <p>Another paragraph inside a div.</p>
-    </div>
-    <hr>
-    <h3>heading after the horizontal line.</h3>
-    <p style="font-size: 50px">
-          with a <span style= "color:red; background-color: gold;">red</span> word.
-    </p>
-    <hr>
-
-    <h2>Unordered list</h2>
-    <ul>
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
-    </ul>
-
-    <h2>Ordered list</h2>
-    <ol>
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
-    </ol>
-
+    <h1 id="main-heading"> Please enter your information </h1>
+    <h2 class="sub-heading"> Please check your information after entering! </h2>
     <form>
-        <p>Text:</p> <input type="text">
+        <label> Name: </label>
+        <input type="text" placeholder="please write your full name" required>
+        <br>
+        <label> Age: </label>
+            <input type="Number" min="50" max="65" placeholder="age">
+        <br> 
+        <label> Do you understand the task? </label>
+        <input type = "checkbox" required>
+        <br>
+        <input type="submit">
     </form>
-<br>
-<div class="myClass"> 
-    <label> Whats your favourite animal?</label>
-    <br><select name="animals" id="animal_type">
-        <option value="" disabled selected>Please select your favourite animal</option>
-        <option>Dog</option>
-        <option>Cat</option>
-        <option>Rabbit</option>
+    <h2 class="sub-heading"> don't forget: </h2>
+    <label> Choose your favorite color: </label>
+    <select>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
     </select>
-</div>
-
 </body>
 </html>
