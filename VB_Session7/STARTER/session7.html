@@ -40,13 +40,34 @@
             function drawFn(canvas){
                 const ctx = canvas.getContext("2d");
                 console.dir(ctx);
+
+                // draw a rectangle
                 ctx.fillStyle= "pink";
                 ctx.fillRect(500, 500, 100, 50);
                 ctx.strokeStyle = "red";
                 ctx.strokeRect(500, 500, 100, 50);
                 ctx.clearRect(500,500, 10, 10);
 
+                // draw a triangle
+                ctx.beginPath();
+                ctx.moveTo(150,50);
+                ctx.lineTo(100,150);
+                ctx.lineTo(200,150)
+                ctx.closePath();
+
+                ctx.fillStyle = "lightgreen";
+                ctx.fill()
+
+                ctx.strokeStyle = "black";
+                ctx.stroke()
+
+                // draw a circle
+                ctx.beginPath();
+                ctx.arc(100,100,50,0,2 * Math.PI);
+                ctx.fillStyle = "lightblue";
+                ctx.fill();
             }
+                
 
             const canvasTrial = {
                 type: jsPsychCanvasKeyboardResponse,

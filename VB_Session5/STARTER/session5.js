@@ -1,21 +1,21 @@
 // 5.1.1
-/* let ageGroup;
+/*
 let age = 25;
-let age = 10
+
+let ageGroup;
 if (age < 18) {
     ageGroup = "Child";
 }
     else
         {ageGroup="Adult";    
 }
-
-console.log("ageGroup", ageGroup)
+console.log("ageGroup:", ageGroup)
 */
 
 // 5.1.2
-/* let age = 18
+let age = 25;
 let ageGroup = age < 18 ? "Child" : "Adult";
-*/
+console.log("ageGroup:", ageGroup);
 
 // 5.1.4
 /* for (let i = 0; i < 5; i++) {
@@ -44,12 +44,12 @@ while (i < 5) {
 }
 */
 // 5.1.7
-let i = 0;
+/* let i = 0;
 do {
     console.log(`Number: ${i}`);
     console.log(i);
     i++;
     console.log(i);
    
-} while (i < 5)
+} while (i < 5) */
 

@@ -8,7 +8,7 @@
 // }
 // console.log("ageGroup:", ageGroup);
 
-let age = 18;
+let age = 25;
 let ageGroup = age<18?"child":"adult";
 console.log("ageGroup:", ageGroup);
 

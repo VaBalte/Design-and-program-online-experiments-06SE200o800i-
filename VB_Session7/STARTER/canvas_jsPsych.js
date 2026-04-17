@@ -8,8 +8,10 @@
 // plus 1: draw an easter egg (with some decoration) next to the bunny 
 
 //step 2:  initiate jsPsych
+const jsPsych = initJsPsych()
 
 // step 3: building timeline 
+const timeline = [];
 
 // instruction 
 const instruction = {
@@ -23,11 +25,13 @@ timeline.push(instruction);
 
 // 7.2.2 make the trial_duration randomly selected from 1s, 2s or 3s
 // fixation 
+const randomTime = 1000*(Math.floor(Math.random() * 3) + 1);
+console.log(randomTime);
 const fixation = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: "+",
     choices: "NO_KEYS",
-    trial_duration: 1000
+    trial_duration: randomTime
 }
 timeline.push(fixation);
 
@@ -95,6 +99,13 @@ const drawBunnyfn = function (canvas){
 
 }
 
+const bunny = {
+    type: jsPsychCanvasKeyboardResponse,
+    canva_size: [window.innerHeight, window.innerWidth],
+    stimulus: drawBunnyfn,
+    choices: "b"
+}
+timeline.push(bunny);
 
 const end = {
     type: jsPsychHtmlKeyboardResponse,
@@ -104,7 +115,43 @@ const end = {
 }
 timeline.push(end)
 
+const face = {
+    type: jsPsychCanvasKeyboardResponse,
+    canva_size: [window.innerHeight, window.innerWidth],
+    stimulus: (canvas) => {
+        const ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(window.innerWidth/2, window.innerHeight/2, 100, 0, 2*Math.PI);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.arc(window.innerWidth/2-25*2, window.innerHeight/2-25, 10, 0, 2*Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.arc(window.innerWidth/2+25*2, window.innerHeight/2-25, 10, 0, 2*Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.arc(window.innerWidth/2, window.innerHeight/2+25*2, 10, 0, Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.closePath();
+    },
+    choices: "NO_KEYS",
+    trial_duration: 1000
+}
+timeline.push(face);
+
 // step 4: run the timline
+
+jsPsych.run(timeline);
 
 
 
